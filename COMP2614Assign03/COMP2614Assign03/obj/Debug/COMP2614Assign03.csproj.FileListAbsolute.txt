@@ -1,0 +1,7 @@
+D:\C# Projects\COMP2614Assign03\COMP2614Assign03\bin\Debug\COMP2614Assign03.exe.config
+D:\C# Projects\COMP2614Assign03\COMP2614Assign03\bin\Debug\COMP2614Assign03.exe
+D:\C# Projects\COMP2614Assign03\COMP2614Assign03\bin\Debug\COMP2614Assign03.pdb
+D:\C# Projects\COMP2614Assign03\COMP2614Assign03\obj\Debug\COMP2614Assign03.csprojResolveAssemblyReference.cache
+D:\C# Projects\COMP2614Assign03\COMP2614Assign03\obj\Debug\COMP2614Assign03.exe
+D:\C# Projects\COMP2614Assign03\COMP2614Assign03\obj\Debug\COMP2614Assign03.pdb
+D:\C# Projects\COMP2614Assign03\COMP2614Assign03\bin\Debug\invoicedata.txt

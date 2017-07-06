@@ -1,0 +1,9 @@
+D:\C# Projects\COMP2614Assign05\COMP2614Assign05\bin\Debug\COMP2614Assign05.exe.config
+D:\C# Projects\COMP2614Assign05\COMP2614Assign05\bin\Debug\COMP2614Assign05.exe
+D:\C# Projects\COMP2614Assign05\COMP2614Assign05\bin\Debug\COMP2614Assign05.pdb
+D:\C# Projects\COMP2614Assign05\COMP2614Assign05\obj\Debug\COMP2614Assign05.csprojResolveAssemblyReference.cache
+D:\C# Projects\COMP2614Assign05\COMP2614Assign05\obj\Debug\COMP2614Assign05.DateForm.resources
+D:\C# Projects\COMP2614Assign05\COMP2614Assign05\obj\Debug\COMP2614Assign05.Properties.Resources.resources
+D:\C# Projects\COMP2614Assign05\COMP2614Assign05\obj\Debug\COMP2614Assign05.csproj.GenerateResource.Cache
+D:\C# Projects\COMP2614Assign05\COMP2614Assign05\obj\Debug\COMP2614Assign05.exe
+D:\C# Projects\COMP2614Assign05\COMP2614Assign05\obj\Debug\COMP2614Assign05.pdb

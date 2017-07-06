@@ -1,0 +1,6 @@
+D:\C# Projects\COMP2614Midterm\COMP2614Midterm\bin\Debug\COMP2614Midterm.exe.config
+D:\C# Projects\COMP2614Midterm\COMP2614Midterm\obj\Debug\COMP2614Midterm.csprojResolveAssemblyReference.cache
+D:\C# Projects\COMP2614Midterm\COMP2614Midterm\bin\Debug\COMP2614Midterm.exe
+D:\C# Projects\COMP2614Midterm\COMP2614Midterm\bin\Debug\COMP2614Midterm.pdb
+D:\C# Projects\COMP2614Midterm\COMP2614Midterm\obj\Debug\COMP2614Midterm.exe
+D:\C# Projects\COMP2614Midterm\COMP2614Midterm\obj\Debug\COMP2614Midterm.pdb
