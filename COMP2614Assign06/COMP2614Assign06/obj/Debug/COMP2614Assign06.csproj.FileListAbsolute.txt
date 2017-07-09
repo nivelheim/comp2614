@@ -1,0 +1,2 @@
+D:\C# Projects\COMP2614Assign06\COMP2614Assign06\bin\Debug\COMP2614Assign06.exe.config
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\bin\Debug\COMP2614Assign06.exe.config
