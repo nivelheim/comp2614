@@ -1,2 +1,11 @@
 D:\C# Projects\COMP2614Assign06\COMP2614Assign06\bin\Debug\COMP2614Assign06.exe.config
 D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\bin\Debug\COMP2614Assign06.exe.config
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\obj\Debug\COMP2614Assign06.csprojResolveAssemblyReference.cache
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\obj\Debug\COMP2614Assign06.Properties.Resources.resources
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\obj\Debug\COMP2614Assign06.csproj.GenerateResource.Cache
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\bin\Debug\COMP2614Assign06.exe
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\bin\Debug\COMP2614Assign06.pdb
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\obj\Debug\COMP2614Assign06.MainForm.resources
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\obj\Debug\COMP2614Assign06.exe
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\obj\Debug\COMP2614Assign06.pdb
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\obj\Debug\COMP2614Assign06.Dialog.resources

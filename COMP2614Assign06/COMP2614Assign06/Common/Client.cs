@@ -3,9 +3,9 @@
 /// ---Class Customer---
 /// Item class to save all the prroperties of each rows from DB
 /// </summary>
-public class Customer
+public class Client
 {
-    public String CustomerCode { get; set; }
+    public String ClientCode { get; set; }
     public String CompanyName { get; set; }
     public String Address1 { get; set; }
     public String Address2 { get; set; }
@@ -13,13 +13,13 @@ public class Customer
     public String Province { get; set; }
     public String PostalCode { get; set; }
     public decimal YtdSales { get; set; }
-    public bool? IsCreditHold { get; set; }
+    public bool IsCreditHold { get; set; }
     public String Notes { get; set; }
 
-	public Customer(String cCode, String cName, String add1, String add2, String cty, 
-        String prov, String pCode, decimal sale, bool? cred, String note)
+	public Client(String cCode, String cName, String add1, String add2, String cty, 
+        String prov, String pCode, decimal sale, bool cred, String note)
 	{
-        CustomerCode = cCode;
+        ClientCode = cCode;
         CompanyName = cName;
         Address1 = add1;
         Address2 = add2;
