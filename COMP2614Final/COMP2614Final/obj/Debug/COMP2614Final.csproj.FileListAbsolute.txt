@@ -1,0 +1,11 @@
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\bin\Debug\COMP2614Final.exe.config
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\bin\Debug\COMP2614Final.exe
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\bin\Debug\COMP2614Final.pdb
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\obj\Debug\COMP2614Final.csprojResolveAssemblyReference.cache
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\obj\Debug\COMP2614Final.Properties.Resources.resources
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\obj\Debug\COMP2614Final.csproj.GenerateResource.Cache
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\obj\Debug\COMP2614Final.exe
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\obj\Debug\COMP2614Final.pdb
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\bin\Debug\COMP2614FinalLibrary.dll
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\bin\Debug\COMP2614FinalLibrary.pdb
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\obj\Debug\COMP2614Final.MainForm.resources

@@ -1,0 +1,5 @@
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614FinalLibrary\obj\Debug\COMP2614FinalLibrary.csprojResolveAssemblyReference.cache
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614FinalLibrary\bin\Debug\COMP2614FinalLibrary.dll
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614FinalLibrary\bin\Debug\COMP2614FinalLibrary.pdb
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614FinalLibrary\obj\Debug\COMP2614FinalLibrary.dll
+C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614FinalLibrary\obj\Debug\COMP2614FinalLibrary.pdb
