@@ -16,6 +16,11 @@ public class Client
     public bool IsCreditHold { get; set; }
     public String Notes { get; set; }
 
+    public Client()
+    {
+
+    }
+
 	public Client(String cCode, String cName, String add1, String add2, String cty, 
         String prov, String pCode, decimal sale, bool cred, String note)
 	{

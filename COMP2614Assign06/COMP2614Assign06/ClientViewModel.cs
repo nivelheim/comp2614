@@ -16,7 +16,7 @@ public class ClientViewModel : INotifyPropertyChanged
     private bool isCreditHold;
     private String notes;
 
-    public BindingList<Client> Clients { get; set; }
+    public ClientCollection Clients { get; set; }
     public event PropertyChangedEventHandler PropertyChanged;
 
     private void OnPropertyChanged([CallerMemberName] string propertyName = "")
@@ -24,7 +24,7 @@ public class ClientViewModel : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-    public ClientViewModel(BindingList<Client> list) 
+    public ClientViewModel(ClientCollection list) 
 	{
         this.Clients = list;
 	}
@@ -142,6 +142,23 @@ public class ClientViewModel : INotifyPropertyChanged
         YtdSales = c.YtdSales;
         IsCreditHold = c.IsCreditHold;
         Notes = c.Notes;
+    }
+
+    public Client GetDisplayingClient()
+    {
+        Client client = new Client();
+        client.ClientCode = this.ClientCode;
+        client.CompanyName = this.CompanyName;
+        client.Address1 = this.Address1;
+        client.Address2 = this.Address2;
+        client.City = this.City;
+        client.Province = this.Province;
+        client.PostalCode = this.PostalCode;
+        client.YtdSales = this.YtdSales;
+        client.IsCreditHold = this.IsCreditHold;
+        client.Notes = this.Notes;
+
+        return client;
     }
 
     public void SaveClient(int index)

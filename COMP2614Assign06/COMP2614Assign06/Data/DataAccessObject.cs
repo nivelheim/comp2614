@@ -89,14 +89,14 @@ public class DataAccessObject
             string query = @"UPDATE dbo.Client918606
                                  SET CompanyName = @cName
                                  , Address1 = @addr1
-                                 , Address1 = @addr2
+                                 , Address2 = @addr2
                                  , City = @city
                                  , Province = @prov
                                  , PostalCode = @pCode
                                  , YTDSales = @sales
                                  , CreditHold = @isHold
                                  , Notes = @notes
-                                 WHERE ProductId = @pid";
+                                 WHERE ClientCode = @cCode";
 
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -104,6 +104,7 @@ public class DataAccessObject
                 cmd.CommandText = query;
                 cmd.Connection = conn;
 
+                cmd.Parameters.AddWithValue("@cCode", client.ClientCode);
                 cmd.Parameters.AddWithValue("@cName", client.CompanyName);
                 cmd.Parameters.AddWithValue("@addr1", client.Address1);
                 cmd.Parameters.AddWithValue("@prov", client.Province);
@@ -116,7 +117,7 @@ public class DataAccessObject
                 }
                 else
                 {
-                    cmd.Parameters.AddWithValue("@cName", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@addr2", DBNull.Value);
                 }
 
                 if (client.City != null)
@@ -175,9 +176,9 @@ public class DataAccessObject
         }
     }
 
-    public static BindingList<Client> SelectAll()
+    public static ClientCollection SelectAll()
     {
-        BindingList<Client> clients;
+        ClientCollection clients;
 
         using (SqlConnection conn = new SqlConnection(connString))
         {
@@ -190,7 +191,7 @@ public class DataAccessObject
                 cmd.Connection = conn;
                 conn.Open();
 
-                clients = new BindingList<Client>();
+                clients = new ClientCollection();
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {

@@ -7,17 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace COMP2614Assign06
 {
     public partial class Dialog : Form
     {
+        MainForm main;
         public ClientViewModel ClientModel { get; set; }
         public int SelectedRow { get; set; }
         public bool BindingSet { get; set; } = false;
 
-        public Dialog()
+        public Dialog(MainForm form)
         {
+            main = form;
+            this.FormClosing += new FormClosingEventHandler(this.dButtonOk_Click);
             InitializeComponent();
         }
 
@@ -34,9 +38,60 @@ namespace COMP2614Assign06
 
         private void dButtonOk_Click(object sender, EventArgs e)
         {
-            ClientModel.SaveClient(SelectedRow);
-        }
+            //ClientModel.SaveClient(SelectedRow);
 
+            
+            int rowsAffected;
+
+            Client client = ClientModel.GetDisplayingClient();
+            DataAccessObject.UpdateClient(client);
+            ClientModel.Clients = ClientValidation.GetClients();
+            this.DialogResult = DialogResult.OK;
+            
+
+            /*
+            try
+            {
+                Client client = ClientModel.GetDisplayingClient();
+                int rowsAffected;
+                string errorMessage;
+
+
+                rowsAffected = ClientValidation.UpdateClient(client);
+                
+                if (rowsAffected > 0)
+                {
+                    ClientModel.Clients = ClientValidation.GetClients();
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    if (rowsAffected == 0)
+                    {
+                        errorMessage = "No DB changes were made";
+                    }
+                    else
+                    {
+                        errorMessage = ClientValidation.ErrorMessage;
+                    }
+
+                    MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Processing Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            */
+        }
+        
         private void setTextbox()
         {
 

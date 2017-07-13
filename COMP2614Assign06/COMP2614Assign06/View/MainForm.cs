@@ -13,7 +13,7 @@ namespace COMP2614Assign06
     public partial class MainForm : Form
     {
         private ClientViewModel clientVM;
-        private BindingList<Client> clientList;
+        private ClientCollection clientList;
         private Dialog clientDialog;
 
         public MainForm()
@@ -27,7 +27,7 @@ namespace COMP2614Assign06
             // configured = true; // uncomment to configure DataGridView 
             clientList = DataAccessObject.SelectAll();
             clientVM = new ClientViewModel(clientList);
-            clientDialog = new Dialog();
+            clientDialog = new Dialog(this);
 
             dataGridViewClients.AutoGenerateColumns = true;
             dataGridViewClients.DataSource = clientVM.Clients;
@@ -53,7 +53,6 @@ namespace COMP2614Assign06
         }
 
         */
-
 
         private void setupDataGridView()
         {        
@@ -174,6 +173,15 @@ namespace COMP2614Assign06
             clientDialog.SelectedRow = dataGridViewClients.CurrentRow.Index;
             clientDialog.ClientModel = clientVM;
             clientDialog.ShowDialog();
+
+            if (clientDialog.DialogResult == DialogResult.OK) 
+            {
+                clientVM.Clients = DataAccessObject.SelectAll();
+                dataGridViewClients.DataSource = clientVM.Clients;
+                dataGridViewClients.Refresh();
+            }
+
+            //clientDialog.Dispose();                        
         }
 
 

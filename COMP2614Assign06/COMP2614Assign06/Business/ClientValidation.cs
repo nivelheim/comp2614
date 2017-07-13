@@ -25,6 +25,12 @@ public class ClientValidation
         }
     }
 
+    public static ClientCollection GetClients() => DataAccessObject.SelectAll();
+    public static int DeleteClient(Client client) => DataAccessObject.DeleteProduct(client);
+    //{
+    //    return ProductRepository.DeleteProduct(product);
+    //}
+
     public static int AddClient(Client client)
     {
         if (validate(client))
@@ -49,10 +55,17 @@ public class ClientValidation
         }
     }
 
-    public static int DeleteClient(Client product) => DataAccessObject.DeleteProduct(client);
-    //{
-    //    return ProductRepository.DeleteProduct(product);
-    //}
+    public static int GetClients(Client client)
+    {
+        if (validate(client))
+        {
+            return DataAccessObject.UpdateClient(client);
+        }
+        else
+        {
+            return -1;
+        }
+    }
 
     private static bool validate(Client client)
     {
