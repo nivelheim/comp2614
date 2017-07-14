@@ -9,3 +9,6 @@ C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\obj\Debug\COMP2614Fi
 C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\bin\Debug\COMP2614FinalLibrary.dll
 C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\bin\Debug\COMP2614FinalLibrary.pdb
 C:\Users\a00918606\Desktop\2614\COMP2614Final\COMP2614Final\obj\Debug\COMP2614Final.MainForm.resources
+D:\github\comp2614\COMP2614Final\COMP2614Final\bin\Debug\COMP2614Final.exe.config
+D:\github\comp2614\COMP2614Final\COMP2614Final\obj\Debug\COMP2614Final.exe
+D:\github\comp2614\COMP2614Final\COMP2614Final\obj\Debug\COMP2614Final.pdb

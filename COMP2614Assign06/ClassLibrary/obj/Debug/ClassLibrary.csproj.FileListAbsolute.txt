@@ -1,0 +1,4 @@
+D:\github\comp2614\COMP2614Assign06\ClassLibrary\bin\Debug\ClassLibrary.dll
+D:\github\comp2614\COMP2614Assign06\ClassLibrary\bin\Debug\ClassLibrary.pdb
+D:\github\comp2614\COMP2614Assign06\ClassLibrary\obj\Debug\ClassLibrary.dll
+D:\github\comp2614\COMP2614Assign06\ClassLibrary\obj\Debug\ClassLibrary.pdb

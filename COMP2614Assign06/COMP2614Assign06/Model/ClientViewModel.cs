@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using ClassLibrary;
 
 public class ClientViewModel : INotifyPropertyChanged
 {

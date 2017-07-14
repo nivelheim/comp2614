@@ -42,6 +42,7 @@
             this.dataGridViewClients.Name = "dataGridViewClients";
             this.dataGridViewClients.Size = new System.Drawing.Size(680, 249);
             this.dataGridViewClients.TabIndex = 1;
+            this.dataGridViewClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClients_CellContentClick);
             // 
             // label1
             // 
