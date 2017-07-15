@@ -4,8 +4,12 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using ClassLibrary;
 
+/// <summary>
+/// This is a View Model that databinds database, and Edit form and GridView in the main form.
+/// </summary>
 public class ClientViewModel : INotifyPropertyChanged
 {
+    //These variables represent a client being displayed
     private String clientCode;
     private String companyName;
     private String address1;
@@ -17,9 +21,11 @@ public class ClientViewModel : INotifyPropertyChanged
     private bool isCreditHold;
     private String notes;
 
+    //This collection will be the key list that will act as model
     public ClientCollection Clients { get; set; }
     public event PropertyChangedEventHandler PropertyChanged;
 
+    //No longer needed event invoker
     private void OnPropertyChanged([CallerMemberName] string propertyName = "")
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -131,6 +137,7 @@ public class ClientViewModel : INotifyPropertyChanged
         }
     }
 
+    //Set currently displaying client
     public void SetDisplayingClient(Client c)
     {
         ClientCode = c.ClientCode;
@@ -145,6 +152,7 @@ public class ClientViewModel : INotifyPropertyChanged
         Notes = c.Notes;
     }
 
+    //Get currently displaying client
     public Client GetDisplayingClient()
     {
         Client client = new Client();
@@ -162,6 +170,7 @@ public class ClientViewModel : INotifyPropertyChanged
         return client;
     }
 
+    //Save indexed client to the current model list
     public void SaveClient(int index)
     {
         Clients[index].ClientCode = ClientCode;

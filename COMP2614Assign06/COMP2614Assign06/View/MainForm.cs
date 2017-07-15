@@ -8,14 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary;
+using COMP2614Assign06.View;
 
 namespace COMP2614Assign06
 {
+    /// <summary>
+    /// This is the main form that contains GridView and CRUD functionality
+    /// </summary>
     public partial class MainForm : Form
     {
-        private ClientViewModel clientVM;
-        private ClientCollection clientList;
-        private Dialog clientDialog;
+        private CreateForm createDialog;        //Add Record Form
+        private ClientViewModel clientVM;       //ViewModel
+        private ClientCollection clientList;    //Collection used for ViewModel initialization and update
+        private Dialog clientDialog;            //Edit Record Form
 
         public MainForm()
         {
@@ -24,15 +29,16 @@ namespace COMP2614Assign06
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            bool configured = false;
+            //bool configured = false;
             // configured = true; // uncomment to configure DataGridView 
-            clientList = DataAccessObject.SelectAll();
-            clientVM = new ClientViewModel(clientList);
-            clientDialog = new Dialog(this);
+            clientList = DataAccessObject.SelectAll();      //Fetch records from DB
+            clientVM = new ClientViewModel(clientList);     //Connect VM with fetched DB
+            clientDialog = new Dialog(this);                //Create Edit Record Dialog
+            createDialog = new CreateForm();                //Create Add Record Dialog
 
-            dataGridViewClients.AutoGenerateColumns = true;
-            dataGridViewClients.DataSource = clientVM.Clients;
-           //setupDataGridView();
+            dataGridViewClients.AutoGenerateColumns = false;    //DO NOT autogenerate columns
+            dataGridViewClients.DataSource = clientVM.Clients;  //Datasource from VM
+            setupDataGridView();
         }
 
         /*No more used data binding
@@ -169,6 +175,8 @@ namespace COMP2614Assign06
         }
         */
 
+
+        //Edit Button Event
         private void mainEditButton_Click(object sender, EventArgs e)
         {
             clientDialog.SelectedRow = dataGridViewClients.CurrentRow.Index;
@@ -180,78 +188,64 @@ namespace COMP2614Assign06
                 clientVM.Clients = DataAccessObject.SelectAll();
                 dataGridViewClients.DataSource = clientVM.Clients;
                 dataGridViewClients.Refresh();
+                setOutputLabel();
+            }                      
+        }
+
+        //Output Label Setup Method
+        private void setOutputLabel()
+        {
+            string outputData = string.Format("{0:N2}\r\n\n{1}{2}\r\n"
+                                         , clientVM.Clients.TotalYTDSales
+                                         , clientVM.Clients.CreditHoldCount
+                                         , " Credit Holds");
+
+            mainLabelOutput.Text = outputData;
+        }
+
+        //Add Button Behaviour
+        private void mainAddButton_Click(object sender, EventArgs e)
+        {
+            createDialog.ShowDialog();
+
+            if (createDialog.DialogResult == DialogResult.OK)
+            {
+                clientVM.Clients = DataAccessObject.SelectAll();
+                dataGridViewClients.DataSource = clientVM.Clients;
+                dataGridViewClients.Refresh();
+                setOutputLabel();
+            }
+        }
+
+        //Delete Button Behaviour
+        private void mainDeleteButton_Click(object sender, EventArgs e)
+        {
+            Client client;
+            //For instant deletion
+            if (mainCheckBox.Checked == true)
+            {
+                client = clientVM.Clients.ElementAt(dataGridViewClients.CurrentRow.Index);
+                ClientValidation.DeleteClient(client);
             }
 
-            //clientDialog.Dispose();                        
-        }
+            //Checked deletion
+            else
+            {
+                const string message = "Are you sure you want to delete selected record?";
+                const string caption = "Confirm Deletion";
+                var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (result == DialogResult.Yes)
+                {
+                    client = clientVM.Clients.ElementAt(dataGridViewClients.CurrentRow.Index);
+                    ClientValidation.DeleteClient(client);
+                }
+            }
 
-        /*Unused clickevent
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            int index = dataGridViewClients.CurrentRow.Index;
-            clientVM.SaveClient(index);
-           
-            clientVM.Clients.ResetItem(index);
-
-            string outputLegend = string.Format("{0}\r\n{1}\r\n{2}\r\n{3}\r\n{4}\r\n{5}\r\n{6}\r\n{7}\r\n{8}\r\n{9}\r\n"
-                                         , "CliID:"
-                                         , "ComName:"
-                                         , "Addr1:"
-                                         , "Addr2:"
-                                         , "City:"
-                                         , "Prov:"
-                                         , "PoCode:"
-                                         , "Sales:"
-                                         , "Taxable:"
-                                         , "Notes:");
-
-
-            string outputData = string.Format("{0}\r\n{1}\r\n{2}\r\n{3}\r\n{4}\r\n{5}\r\n{6}\r\n{7}\r\n{8}\r\n{9}\r\n"
-                                         , client.ClientCode
-                                         , client.CompanyName
-                                         , client.Address1
-                                         , client.Address2
-                                         , client.City
-                                         , client.Province
-                                         , client.PostalCode
-                                         , client.YtdSales
-                                         , client.IsCreditHold
-                                         , client.Notes);
-
-            labelProductLegend.Text = outputLegend;
-            labelProductData.Text = outputData;
-        }
-        */
-        
-        private void textBoxSku_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelProductLegend_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxCost_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelProductData_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewClients_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            clientVM.Clients = DataAccessObject.SelectAll();
+            dataGridViewClients.DataSource = clientVM.Clients;
+            dataGridViewClients.Refresh();
+            setOutputLabel();
         }
     }
 }

@@ -7,7 +7,9 @@ using System.Runtime.CompilerServices;
 
 namespace ClassLibrary
 {
-
+    /// <summary>
+    /// This is a repository class that accesses to DB and run CRUD operations
+    /// </summary>
     public class DataAccessObject
     {
         private static String connString = @"Server=tcp:comp2614.database.windows.net,1433;
@@ -28,14 +30,15 @@ namespace ClassLibrary
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = @"INSERT INTO dbo.Client918606
-                                 (CompanyName, Address1, Address2, City, Province, PostalCode, YTDSales, CreditHold, Notes)
-                                 VALUES (@cName, @addr1, @addr2, @city, @prov, @pCode, @sales, @isHold @notes)";
+                                 (ClientCode, CompanyName, Address1, Address2, City, Province, PostalCode, YTDSales, CreditHold, Notes)
+                                 VALUES (@cCode, @cName, @addr1, @addr2, @city, @prov, @pCode, @sales, @isHold, @notes)";
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = query;
                     cmd.Connection = conn;
 
+                    cmd.Parameters.AddWithValue("@cCode", client.ClientCode);
                     cmd.Parameters.AddWithValue("@cName", client.CompanyName);
                     cmd.Parameters.AddWithValue("@addr1", client.Address1);
                     cmd.Parameters.AddWithValue("@prov", client.Province);
@@ -157,7 +160,7 @@ namespace ClassLibrary
             }
         }
 
-        public static int DeleteProduct(Client client)
+        public static int DeleteClient(Client client)
         {
             using (SqlConnection conn = new SqlConnection(connString))
             {

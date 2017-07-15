@@ -4,7 +4,10 @@ using System.Linq;
 
 namespace ClassLibrary
 {
-
+    /// <summary>
+    /// Class ClientCollection that extends BindingList
+    /// Also includes Total Sales Calculation and Total Credit Hold Count Calculation
+    /// </summary>
     public class ClientCollection : BindingList<Client>
     {
 
@@ -13,9 +16,9 @@ namespace ClassLibrary
 
         }
 
-        decimal TotalYTDSales => this.Sum(x => x.YtdSales);
+        public decimal TotalYTDSales => this.Sum(x => x.YtdSales);
 
-        int CreditHoldCount => this.Count(x => x.IsCreditHold = true);
+        public int CreditHoldCount => this.Count(x => x.IsCreditHold == true);
 
     }
 }

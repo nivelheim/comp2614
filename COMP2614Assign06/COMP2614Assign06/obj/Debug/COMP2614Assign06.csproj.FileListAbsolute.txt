@@ -9,3 +9,6 @@ D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\obj\Debug\COMP2614Assign06.
 D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\obj\Debug\COMP2614Assign06.exe
 D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\obj\Debug\COMP2614Assign06.pdb
 D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\obj\Debug\COMP2614Assign06.Dialog.resources
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\bin\Debug\ClassLibrary.dll
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\bin\Debug\ClassLibrary.pdb
+D:\github\comp2614\COMP2614Assign06\COMP2614Assign06\obj\Debug\COMP2614Assign06.View.CreateForm.resources
